@@ -2,7 +2,6 @@ import movieTypes from "./type";
 
 const INITIAL_STATE = {
   movies: "",
-  autres: ""
 };
 
 const moviePopularReducer = (state = INITIAL_STATE, action) => {

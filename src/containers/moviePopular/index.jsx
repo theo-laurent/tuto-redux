@@ -10,14 +10,14 @@ import { getDataAction } from "./action";
 //components
 import Movie from "../../components/moviePopular/index";
 
-
 const mapDispatchToProps = (dispatch) => ({
   getData: (données) => dispatch(getDataAction(données)),
 });
 
-const mapStateToProps = ({ home }) => ({
+const mapStateToProps = ({ home, moviePopular }) => ({
   nom: home.data.nom,
   age: home.data.age,
+  movies: moviePopular.movies,
 });
 
 //render

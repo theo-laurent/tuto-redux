@@ -4,10 +4,8 @@ import { createStructuredSelector } from "reselect";
 
 //actions
 import { getDataAction } from "./action";
-
 //components
 import Home from "../../components/home/index";
-
 //selecteurs
 import { selectData } from "../moviePopular/selector";
 

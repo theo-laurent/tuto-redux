@@ -7,8 +7,8 @@ import { searchMovieActionSuccess } from "./action";
 //
 import request from "../../utils/request";
 
-function* searchMovie() {
-  const searchMovie = "zorro";
+function* searchMovie(action) {
+  const searchMovie = action.payload
   const requestURL = `https://api.themoviedb.org/3/search/movie?api_key=d4dfced817985d414b727774821c9678&query=${searchMovie}&language=fr`;
 
   try {

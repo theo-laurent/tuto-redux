@@ -6,12 +6,14 @@ import { compose } from "redux";
 
 //actions
 import { getDataAction } from "./action";
+import { findMovieAction } from "../movieDetailed/actions";
 
 //components
 import Movie from "../../components/moviePopular/index";
 
 const mapDispatchToProps = (dispatch) => ({
   getData: (data) => dispatch(getDataAction(data)),
+  findMovie: (data) => dispatch(findMovieAction(data))
 });
 
 const mapStateToProps = ({ moviePopular }) => ({

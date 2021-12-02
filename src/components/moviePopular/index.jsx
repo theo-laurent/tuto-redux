@@ -4,7 +4,8 @@ import "../../styles/moviePopular.css";
 // uuid v4
 import { v4 as uuidv4 } from "uuid";
 
-const MoviePopular = ({ movies, getData }) => {
+const MoviePopular = ({ movies, getData, findMovie }) => {
+  // appel des films populaires
   useEffect(() => {
     getData();
   }, [getData]);
@@ -18,7 +19,14 @@ const MoviePopular = ({ movies, getData }) => {
         {movies &&
           movies.map((movie) => {
             return (
-              <div className="moviePopular__card" key={uuidv4()}>
+              <div
+                //func click pour envoyer ID film dans le store
+                onClick={() => {
+                  findMovie(movie.id);
+                }}
+                className="moviePopular__card"
+                key={uuidv4()}
+              >
                 <div>
                   <img
                     alt=""

@@ -7,6 +7,11 @@ import "../../styles/header.css";
 const Header = ({ searchMovie }) => {
   const [nameMovie, setNameMovie] = useState("");
 
+  // si le champ de recherche est vide on renvoie l'action searchMovie vide
+  if (nameMovie.length === 0) {
+    searchMovie("");
+  }
+
   return (
     <div className="header">
       <input
@@ -19,6 +24,7 @@ const Header = ({ searchMovie }) => {
       />
       <button
         type="submit"
+        // on lance l'action searchMovie avec la const nameMovie dépendant de l'input
         onClick={() => searchMovie(nameMovie)}
         htmlFor="headerSearch"
         className="header__btn"

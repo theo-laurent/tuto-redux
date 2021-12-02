@@ -5,11 +5,13 @@ import { compose } from "redux";
 // import { createStructuredSelector } from "reselect";
 
 //actions
-
+import { findMovieAction } from "../movieDetailed/actions";
 //components
 import ShowMovieSearch from "../../components/showMovieSearch/index";
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  findMovie: (data) => dispatch(findMovieAction(data)),
+});
 
 const mapStateToProps = ({ header }) => ({
   movieSearch: header.searchMovie,

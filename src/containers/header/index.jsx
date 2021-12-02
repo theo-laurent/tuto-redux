@@ -11,15 +11,14 @@ import Header from "../../components/header/index";
 // sert a envoyer les données au store
 const mapDispatchToProps = (dispatch) => ({
   // on donne un nom à notre props pour recupérer l'action dans le component
-  searchMovie: (data) => dispatch(searchMovieAction(data))
+  searchMovie: (data) => dispatch(searchMovieAction(data)),
 });
 
+const mapStateToProps = createStructuredSelector({});
 
-const mapStateToProps = createStructuredSelector({
-});
 //render
-const headerContainer = compose(connect(mapStateToProps, mapDispatchToProps))(
+const HeaderContainer = compose(connect(mapStateToProps, mapDispatchToProps))(
   Header
 );
 
-export default headerContainer;
+export default HeaderContainer;

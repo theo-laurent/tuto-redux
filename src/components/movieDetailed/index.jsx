@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 // css
 import "../../styles/movieDetailed.css";
 // import barre progressive
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 
 const MovieDetailed = ({ movie }) => {
-
   if (movie) {
     let img = "https://image.tmdb.org/t/p/w500/" + movie.poster_path;
     let titre = movie.title;
-    let année = ` (${new Date(movie.release_date).getFullYear()})`;
-    let dateFr = new Date(movie.release_date).toLocaleDateString();
+    //
+    var releaseDateObj = new Date(movie.release_date)
+    let année = `(${releaseDateObj.getFullYear()})`;
+    let dateFr = releaseDateObj.toLocaleDateString();
     let genres = movie.genres.map((element) => {
       return element.name + ", ";
     });

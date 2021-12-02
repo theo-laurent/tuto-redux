@@ -10,14 +10,19 @@ const MoviePopular = ({ movies, getData, findMovie }) => {
     getData();
   }, [getData]);
 
-  movies && movies.splice(5, 25);
+  useEffect(() => {
+    if (Array.isArray(movies) && movies.length && movies[0]?.id) {
+      findMovie(movies[0].id);
+    }
+  }, [movies, findMovie]);
 
   return (
     <div className="containerMoviePopular">
       <h2>Les films populaires</h2>
       <div className="moviePopular">
         {movies &&
-          movies.map((movie) => {
+          movies.map((movie, index) => {
+            if (index >= 5) return null;
             return (
               <div
                 //func click pour envoyer ID film dans le store

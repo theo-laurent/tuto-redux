@@ -15,7 +15,6 @@ function* getMovie() {
     const response = yield call(request, requestURL, {
       method: "GET",
     });
-
     yield put(getDataSuccessAction(response.results));
   } catch (error) {
     console.log(error);

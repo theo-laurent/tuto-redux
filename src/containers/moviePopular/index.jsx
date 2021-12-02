@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 
 // reselect
-import { createStructuredSelector } from "reselect";
+// import { createStructuredSelector } from "reselect";
 
 //actions
 import { getDataAction } from "./action";
@@ -11,12 +11,10 @@ import { getDataAction } from "./action";
 import Movie from "../../components/moviePopular/index";
 
 const mapDispatchToProps = (dispatch) => ({
-  getData: (données) => dispatch(getDataAction(données)),
+  getData: (data) => dispatch(getDataAction(data)),
 });
 
-const mapStateToProps = ({ home, moviePopular }) => ({
-  nom: home.data.nom,
-  age: home.data.age,
+const mapStateToProps = ({ moviePopular }) => ({
   movies: moviePopular.movies,
 });
 

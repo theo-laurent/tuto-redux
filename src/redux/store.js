@@ -1,4 +1,6 @@
 import { createStore, applyMiddleware, compose } from "redux";
+// import logger from "redux-logger";
+
 // saga racine
 import rootSaga from "./root-saga";
 // rooter racine
@@ -13,7 +15,7 @@ const composeEnhancers =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
     : compose;
 
-const middlewares = [sagaMiddleware];
+const middlewares = [sagaMiddleware /*{logger}*/];
 
 const enhancers = composeEnhancers(applyMiddleware(...middlewares));
 

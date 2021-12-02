@@ -1,11 +1,12 @@
 import { combineReducers } from "redux";
 
 // reducers
-import homeReducer from "../containers/home/reducer";
+import headerReducer from "../containers/header/reducer";
+
 import moviePopularReducer from "../containers/moviePopular/reducer";
 
 const rootReducer = combineReducers({
-  home: homeReducer,
+  header: headerReducer,
   moviePopular: moviePopularReducer,
 });
 

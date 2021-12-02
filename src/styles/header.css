@@ -1,0 +1,52 @@
+.header {
+    background-color: #032541;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header__input {
+    height: 70%;
+    width: 500px;
+    border-radius: 50px;
+    border: none;
+    padding: 0;
+    padding-left: 15px;
+  }
+  
+  .header__input:placeholder-shown {
+    font-size: 17px;
+  }
+  
+  .header__btn {
+    height: 70%;
+    width: 150px;
+    background: linear-gradient(to right, #1cd3ac, #04b7de);
+    border-radius: 50px;
+    border: none;
+    color: white;
+    margin-left: -50px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .header__input:focus {
+    border: none;
+    outline-width: 0;
+  }
+  
+  .header__btn:hover {
+    background: #05b9da;
+    color: black;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .header__input {
+      width: 200px;
+    }
+  
+    .header__btn {
+      width: 100px;
+    }
+  }

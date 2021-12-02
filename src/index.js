@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import "./index.css";
+import "./styles/index.css";
 
 // components
-import Home from "./containers/home";
+import HeaderContainer from "./containers/header";
+import ShowMovieSearchContainer from "./containers/showMovieSearch";
 import MovieContainer from "./containers/moviePopular";
 
 // store
@@ -14,7 +15,8 @@ const { store } = configStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Home />
+    <HeaderContainer />
+    <ShowMovieSearchContainer />
     <MovieContainer />
   </Provider>,
   document.getElementById("root")

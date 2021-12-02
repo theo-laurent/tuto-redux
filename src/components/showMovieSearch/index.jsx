@@ -1,22 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 // css
 import "../../styles/moviePopular.css";
-// uuid v4
+// uuid
 import { v4 as uuidv4 } from "uuid";
 
-const MoviePopular = ({ movies, getData }) => {
-  useEffect(() => {
-    getData();
-  }, [getData]);
-
-  movies && movies.splice(5, 25);
-
+const ShowMovieSearch = ({ movieSearch }) => {
+  console.log(movieSearch);
   return (
     <div className="containerMoviePopular">
       <h2>Les films populaires</h2>
       <div className="moviePopular">
-        {movies &&
-          movies.map((movie) => {
+        {Array.isArray(movieSearch) &&
+          movieSearch.map((movie) => {
             return (
               <div className="moviePopular__card" key={uuidv4()}>
                 <div>
@@ -25,13 +20,7 @@ const MoviePopular = ({ movies, getData }) => {
                     src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
                   />
                   <h3>{movie.title}</h3>
-                  <p>
-                    {new Date(movie.release_date).toLocaleDateString("fr-FR", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </p>
+                  <p>{movie.release_date}</p>
                 </div>
               </div>
             );
@@ -41,4 +30,4 @@ const MoviePopular = ({ movies, getData }) => {
   );
 };
 
-export default MoviePopular;
+export default ShowMovieSearch;
